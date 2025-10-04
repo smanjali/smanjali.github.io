@@ -1,0 +1,209 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLibs</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>Mad anjaLibs</h1>
+    <h2>Give Anj some words, she'll write you a story</h2>
+
+    <div><h3>Send with: <span id="method">GET</span></h3>
+        <div id="getOrPost">
+            <input type="radio" name="send_method" id="get" value="GET" checked><label for="get">GET</label>
+            <input type="radio" name="send_method" id="post" value="POST"><label for="post">POST</label>
+        </div>
+    </div>
+    
+    <form id="myForm" action="story.php" method="GET">
+    
+    <p>Pick a story. You must pick at least one</p>
+    <input type = "checkbox" name="lateNight" id="story1">
+    <label for="story1">A Late Night Encounter</label><br>
+
+    <input type = "checkbox" name="roadTrip" id="story2">
+    <label for="story2">The Road Trip</label><br>
+
+    <input type = "checkbox" name="babySit" id="story3">
+    <label for="story3">The BabySitting Job</label><br><br>
+
+    <fieldset id="night" class="hidden">
+    <legend>Tell Me About The Night</legend>
+        <label for="hour">Time </label>
+        <input type="number" name="hour" id="hr" max="12">
+        <label for="minutes">:</label>
+        <input type="number" name="minutes" id="min" min="10" max="59">
+        <br><br>
+
+        <label for="adj">Adjective </label>
+        <select name="adj" id="adjective">
+            <optgroup label="Good Vibes">
+                <option value="laughing"> laughing</option>
+                <option value="melodic"> melodic</option>
+                <option value="rythmic"> rythmic</option>
+            </optgroup>
+            <optgroup label="Bad Vibes">
+                <option value="eery" > eery</option>
+                <option value="scratchy"> scratchy</option>
+                <option value="deafening"> deafening</option>
+            </optgroup>
+        </select><br><br>
+
+        <label for="rooms">Room </label>
+        <select name="rooms[]" id="rooms" size="2" multiple>
+            <option value="kitch">kitchen</option>
+            <option value="bed">bedroom</option>
+            <option value="bath">bathroom</option>
+            <option value="tv">living room</option>
+            <option value="out">backyard</option>
+        </select><br><br>
+
+        <p>Object</p>
+        <input type="radio" name="object" id="ob1" value="socks">
+        <label for="ob1"> socks</label><br>
+        
+        <input type="radio" name="object" id="ob2" value="knife">
+        <label for="ob2"> knife</label><br>
+
+        <input type="radio" name="object" id="ob3" value="hairspray">
+        <label for="ob3"> hairspray</label><br>
+        
+        <input type="radio" name="object" id="ob4" value="lamp">
+        <label for="ob4"> lamp</label><br>
+
+        <br>
+        
+    </fieldset><br>
+
+    <fieldset id="road" class="hidden">
+    <legend>I Heard You Took A Road Trip</legend>
+
+        <label for="place">Place </label>
+        <select name="place[]" id="place" size="3" multiple>
+            <option value="NV">Nevada</option>
+            <option value="66">US Route 66</option>
+            <option value="Iceland">Iceland</option>
+            <option value="SF">South Florida</option>
+            <option value="desert">The Namib Desert</option>
+        </select><br><br>
+
+        <label for="hour1">Time </label>
+        <input type="number" name="hour1" id="hr1" max="12">
+        <label for="minutes1">:</label>
+        <input type="number" name="minutes1" id="min1" min="10" max="59">
+        <br><br>
+
+        <label for="adjective">Adjective </label>
+        <select name="adjective" id="adjective2">
+            <optgroup label="Good Vibes">
+                <option value="plump"> plump</option>
+                <option value="hot"> hot</option>
+                <option value="jump"> jumping</option>
+            </optgroup>
+            <optgroup label="Bad Vibes">
+                <option value="scruffy" selected> scruffy</option>
+                <option value="dark"> dark</option>
+                <option value="withered"> withered</option>
+            </optgroup>
+        </select><br>
+
+        <p>Sound</p>
+        <input type="radio" name="sound" id="sound1" value="scream">
+        <label for="sound1"> screaming</label><br>
+        
+        <input type="radio" name="sound" id="sound2" value="cry">
+        <label for="sound2"> crying</label><br>
+
+        <input type="radio" name="sound" id="sound3" value="tap">
+        <label for="sound3"> tapping</label><br>
+        
+        <input type="radio" name="sound" id="sound4" value="snicker">
+        <label for="sound4"> snicker</label><br>
+
+        <br>
+        
+    </fieldset><br>
+
+    <fieldset id="baby" class="hidden">
+    <legend>You Took Care Of The Baby</legend>
+        
+        <label for="age">Age </label>
+        <input type="number" name="age" id="num">
+        <br>
+
+        <p>Room</p>
+        <input type="radio" name="room" id="r1" value="bedroom">
+        <label for="r1"> bedroom</label><br>
+        
+        <input type="radio" name="room" id="r2" value="bathroom">
+        <label for="r2"> bathroom</label><br>
+
+        <input type="radio" name="room" id="r3" value="kitchen">
+        <label for="r3"> kitchen</label><br>
+        
+        <input type="radio" name="room" id="r4" value="bsmt">
+        <label for="r4"> basement</label><br><br>
+
+        <label for="timing">Time </label>
+        <select name="timing[]" id="timing" size="2" multiple>
+            <option value="6">6:18</option>
+            <option value="noon">noon</option>
+            <option value="eight">8:00</option>
+            <option value="2">2:45</option>
+            <option value="midnight">midnight</option>
+        </select><br><br>
+
+         <label for="snd">Sound </label>
+        <select name="snd" id="sounds">
+            <optgroup label="Good Vibes">
+                <option value="giggling"> giggling</option>
+                <option value="whispering"> whispering</option>
+                <option value="singing"> singing</option>
+            </optgroup>
+            <optgroup label="Bad Vibes">
+                <option value="screaming" selected> screaming</option>
+                <option value="tapped"> tapping</option>
+                <option value="growling"> growling</option>
+            </optgroup>
+        </select><br><br>
+
+    </fieldset><br>
+
+    <input type = "submit" value="Write Story">
+    </form>
+
+    <script>
+        const story1 = document.getElementById('story1');
+        const story2 = document.getElementById('story2');
+        const story3 = document.getElementById('story3');
+        const night = document.getElementById('night');
+        const road = document.getElementById('road');
+        const baby = document.getElementById('baby');
+
+        story1.addEventListener('change',() => {
+            night.classList.toggle('hidden', !story1.checked);
+        });
+
+        story2.addEventListener('change',() => {
+            road.classList.toggle('hidden', !story2.checked);
+        });
+
+        story3.addEventListener('change',() => {
+            baby.classList.toggle('hidden', !story3.checked);
+        });
+
+        const form = document.querySelector('form');
+
+        form.setAttribute("action", 'story.php');
+
+    </script>
+
+
+
+</body>
+
+</html>
