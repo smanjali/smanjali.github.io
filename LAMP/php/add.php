@@ -63,7 +63,7 @@
             echo "</div>";
 
             // Select and display all users from the database
-            $sql = "SELECT '*' FROM randuser";// MySQL: read every record from the table. Hint: https://www.w3schools.com/mysql/mysql_select.asp
+            $sql = "SELECT * FROM randuser";// MySQL: read every record from the table. Hint: https://www.w3schools.com/mysql/mysql_select.asp
             $result = $conn->query($sql);
 
             echo "<div>";
