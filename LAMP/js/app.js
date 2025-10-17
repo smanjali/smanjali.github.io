@@ -46,12 +46,10 @@ function success(userData) {
   apiform.innerHTML += `<input type="hidden" name="last" value="${apiLast}"/>`
 
   const apiCountry = userData.results[0].location.country;
-  print(apiCountry)
   apiform.innerHTML += `<input type="hidden" name="country" value="${apiCountry}"/>`
   
   const apiAge = userData.results[0].dob.age;
-  print(apiAge)
-  apiForm.innerHTML += `<input type="hidden" name="age" value="${apiAge}"/>`
+  apiform.innerHTML += `<input type="hidden" name="age" value="${apiAge}"/>`
 
   apiform.innerHTML += `<input type="submit" id="addBtn" class="btn" value="Add This One"></button>`
 
