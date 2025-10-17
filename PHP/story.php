@@ -1,7 +1,6 @@
-  
 <?php
 
-$data = ($_SERVER['request_method'] == 'POST') $_POST : $_GET;
+$data = ($_SERVER['request_method'] == 'POST') ? $_POST : $_GET;
 
 $lateNightSelect = isset($data['lateNight']);
 $roadTripSelect = isset($data['roadTrip']);
@@ -43,9 +42,9 @@ foreach ($data as $key => $value) {
 
 <body>
     <div>
-        <?php if($lateNightSelect): ?>
+	<?php if($lateNightSelect): ?>
             <div>
-            <h2>A Late Night Drive</h2>
+                <h2>A Late Night Drive</h2>
             <table>
             <tr>
             <th>Word Type</th>
@@ -55,10 +54,11 @@ foreach ($data as $key => $value) {
                 echo "<tr><td> $key </td>";
                 echo "<td> $value </td></tr>";
             } ?>
+            </table>
             </div>
         <?php endif; ?> 
     
-        <?php if($roadTripSelect): ?>
+    	<?php if($roadTripSelect): ?>
             <div>
             <h2>The Road Trip</h2>
             <table>
@@ -66,10 +66,11 @@ foreach ($data as $key => $value) {
             <th>Word Type</th>
             <th>Word</th>
             </tr>
-            <?php foreach($lateNightData as $key => $value){
+            <?php foreach($roadTripData as $key => $value){
                 echo "<tr><td> $key </td>";
                 echo "<td> $value </td></tr>";
             } ?>
+            </table>
             </div>
         <?php endif; ?>  
 
@@ -81,13 +82,13 @@ foreach ($data as $key => $value) {
             <th>Word Type</th>
             <th>Word</th>
             </tr>
-            <?php foreach($lateNightData as $key => $value){
+            <?php foreach($babySitData as $key => $value){
                 echo "<tr><td> $key </td>";
                 echo "<td> $value </td></tr>";
             } ?>
+            </table>
             </div>
         <?php endif; ?>
-
     </div>
 
     <h3>Complete GET Array:</h3>

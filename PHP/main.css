@@ -2,3 +2,37 @@
     display:none;
 }
 
+html {
+    background-color: #C476C1;
+    padding: 3rem;
+    margin: auto;
+    margin-top: 20px;
+}
+
+body {
+    background-color: blueviolet;
+    border: 7px solid greenyellow;
+    padding-left: 2%;
+    input {
+        background-attachment: fixed;
+        background-color: #DE92D9;
+        font-size: large;
+        font-style: oblique;
+    }
+    font-size: large;
+}
+
+fieldset {
+    background-color: #76A6C4;
+    border: 18px #A2B6BD;
+    margin: auto;
+    max-width: 75%;
+    text-align: center;
+    h3 {
+        background-color: blanchedalmond;
+    }
+
+}
+
+
+

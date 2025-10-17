@@ -32,7 +32,7 @@
     <label for="story3">The BabySitting Job</label><br><br>
 
     <fieldset id="night" class="hidden">
-    <legend>Tell Me About The Night</legend>
+    <legend><h3>Tell Me About The Night</h3></legend>
         <label for="hour">Time </label>
         <input type="number" name="hour" id="hr" max="12">
         <label for="minutes">:</label>
@@ -80,7 +80,7 @@
     </fieldset><br>
 
     <fieldset id="road" class="hidden">
-    <legend>I Heard You Took A Road Trip</legend>
+    <legend><h3>I Heard You Took A Road Trip</h3></legend>
 
         <label for="place">Place </label>
         <select name="place[]" id="place" size="3" multiple>
@@ -129,7 +129,7 @@
     </fieldset><br>
 
     <fieldset id="baby" class="hidden">
-    <legend>You Took Care Of The Baby</legend>
+    <legend><h3>You Took Care Of The Baby</h3></legend>
         
         <label for="age">Age </label>
         <input type="number" name="age" id="num">
@@ -157,7 +157,7 @@
             <option value="midnight">midnight</option>
         </select><br><br>
 
-         <label for="snd">Sound </label>
+        <label for="snd">Sound </label>
         <select name="snd" id="sounds">
             <optgroup label="Good Vibes">
                 <option value="giggling"> giggling</option>
@@ -184,6 +184,8 @@
         const road = document.getElementById('road');
         const baby = document.getElementById('baby');
 
+
+
         story1.addEventListener('change',() => {
             night.classList.toggle('hidden', !story1.checked);
         });
@@ -196,7 +198,23 @@
             baby.classList.toggle('hidden', !story3.checked);
         });
 
+        const getRadio = document.getElementById('get');
+        const postRadio = document.getElementById('post');
+        const method = document.getElementById('method');
         const form = document.querySelector('form');
+        const getOrPost = document.getElementById('getOrPost');
+
+        getOrPost.addEventListener('change',() => {
+
+            if (getRadio.checked) {
+                form.setAttribute("method", 'GET');
+                method.textContent = 'GET';
+            } else {
+                form.setAttribute("method", 'POST');
+                method.textContent = 'POST';
+            }
+
+        });
 
         form.setAttribute("action", 'story.php');
 
