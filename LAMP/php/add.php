@@ -39,8 +39,8 @@
             // Set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $conn->prepare("DROP TABLE IF EXISTS randuser;");
-            $stmt = $conn->prepare("
+            $conn->exec("DROP TABLE IF EXISTS randuser;");
+            $conn->exec("
                 CREATE TABLE randuser (
                 first VARCHAR(100) NOT NULL,
                 last VARCHAR(100) NOT NULL,
