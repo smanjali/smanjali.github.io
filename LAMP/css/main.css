@@ -1,0 +1,16 @@
+html {
+    background-color:tan;
+}
+
+body {
+    background-color: white;
+    border: 10px solid gold;
+    padding: 3rem;
+    margin: auto;
+    margin-top: 20px;
+}
+
+table {
+    bottom: 10px solid orange;
+    background-color: aliceblue;
+}
