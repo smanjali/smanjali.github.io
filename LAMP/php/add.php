@@ -23,7 +23,7 @@
         $lastname = htmlspecialchars($_POST['last']);
         $country = htmlspecialchars($_POST['country']);
         $age = htmlspecialchars($_POST['age']);
-        $username = htmlspecialchars($_POST['username']);
+        $user = htmlspecialchars($_POST['user']);
         
         echo "<p>Adding <strong>$firstname</strong>.</p>";
 
@@ -48,17 +48,17 @@
                 last VARCHAR(100) NOT NULL,
                 country VARCHAR(80) NOT NULL,
                 age INT NOT NULL,
-                username VARCHAR(100) NOT NULL
+                user VARCHAR(100) NOT NULL
                 );");
 
             // Prepare SQL and bind parameters
-            $stmt = $conn->prepare("INSERT INTO randuser (first,last,country,age,username) VALUES (:firstname,:lastname,:country,:age,:username)");
+            $stmt = $conn->prepare("INSERT INTO randuser (first,last,country,age, user) VALUES (:firstname,:lastname,:country,:age,:user)");
             $stmt->bindParam(':firstname', $firstname);
             // TODO: add lastname and country as well as firstname to the MySQL $stmt 
             $stmt->bindParam(':lastname', $lastname);
             $stmt->bindParam(':country', $country);
             $stmt->bindParam(':age', $age, PDO::PARAM_INT);
-            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':user', $user);
 
             echo "<div>";
             if ($stmt->execute()) {
@@ -84,7 +84,7 @@
                             <td>" . htmlspecialchars($row['last']) . "</td>
                             <td>" . htmlspecialchars($row['country']) . "</td>
                             <td>" . htmlspecialchars($row['age']) . "</td>  
-                            <td>" . htmlspecialchars($row['username']) . "</td>                 
+                            <td>" . htmlspecialchars($row['user']) . "</td>                 
                         </tr>";
                 }
                 echo "</tbody></table>";

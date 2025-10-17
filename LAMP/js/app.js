@@ -49,7 +49,7 @@ function success(userData) {
                         <input type="hidden" name="last" value="${apiLast}"/>
                         <input type="hidden" name="country" value="${apiCountry}"/>
                         <input type="hidden" name="age" value="${apiAge}"/>
-                        <input type="hidden" name="username" values="${apiUser}"/>
+                        <input type="hidden" name="user" values="${apiUser}"/>
             <input type="submit" id="addBtn" class="btn" value="Add This One"></button>`;
 
   
