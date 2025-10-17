@@ -43,6 +43,8 @@ function success(userData) {
   const apiCountry = userData.results[0].location.country;
   const apiAge = userData.results[0].dob.age;
   const apiUser = userData.results[0].login.username;
+  
+  console.log("user data", apiUser);
 
   apiform = document.querySelector("form")
   apiform.innerHTML = `<input type="hidden" name="first" value="${apiFirst}"/>
