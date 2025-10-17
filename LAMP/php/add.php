@@ -74,9 +74,9 @@
                 while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     // TODO: change the hardcoded string to actual API data, ie: firstname, etc.. 
                     echo "<tr>
-                            <td>" . htmlspecialchars($row('first')) . "</td>
-                            <td>" . htmlspecialchars($row('last')) . "</td>
-                            <td>" . htmlspecialchars($row('country')) . "</td>                    
+                            <td>" . htmlspecialchars($row['first']) . "</td>
+                            <td>" . htmlspecialchars($row['last']) . "</td>
+                            <td>" . htmlspecialchars($row['country']) . "</td>                    
                         </tr>";
                 }
                 echo "</tbody></table>";
