@@ -23,6 +23,7 @@
         $lastname = htmlspecialchars($_POST['last']);
         $country = htmlspecialchars($_POST['country']);
         $age = htmlspecialchars($_POST['age']);
+        $username = htmlspecialchars($_POST['username']);
         
         echo "<p>Adding <strong>$firstname</strong>.</p>";
 
@@ -46,16 +47,18 @@
                 first VARCHAR(100) NOT NULL,
                 last VARCHAR(100) NOT NULL,
                 country VARCHAR(80) NOT NULL,
-                age INT NOT NULL
+                age INT NOT NULL,
+                username VARCHAR(100) NOT NULL
                 );");
 
             // Prepare SQL and bind parameters
-            $stmt = $conn->prepare("INSERT INTO randuser (first,last,country,age) VALUES (:firstname,:lastname,:country,:age)");
+            $stmt = $conn->prepare("INSERT INTO randuser (first,last,country,age,username) VALUES (:firstname,:lastname,:country,:age,:username)");
             $stmt->bindParam(':firstname', $firstname);
             // TODO: add lastname and country as well as firstname to the MySQL $stmt 
             $stmt->bindParam(':lastname', $lastname);
             $stmt->bindParam(':country', $country);
             $stmt->bindParam(':age', $age, PDO::PARAM_INT);
+            $stmt->bindParam(':username', $username);
 
             echo "<div>";
             if ($stmt->execute()) {
@@ -71,7 +74,7 @@
 
             echo "<div>";
                 echo "<table>";
-                echo "<thead><tr><th>First Name</th><th>Last Name</th><th>Country</th><th>Age</th></tr></thead><tbody>";
+                echo "<thead><tr><th>First Name</th><th>Last Name</th><th>Country</th><th>Age</th><th>Username</th></tr></thead><tbody>";
 
                 // output data of each row
                 while($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -80,7 +83,8 @@
                             <td>" . htmlspecialchars($row['first']) . "</td>
                             <td>" . htmlspecialchars($row['last']) . "</td>
                             <td>" . htmlspecialchars($row['country']) . "</td>
-                            <td>" . htmlspecialchars($row['age']) . "</td>                   
+                            <td>" . htmlspecialchars($row['age']) . "</td>  
+                            <td>" . htmlspecialchars($row['username']) . "</td>                 
                         </tr>";
                 }
                 echo "</tbody></table>";

@@ -42,12 +42,14 @@ function success(userData) {
   const apiLast = userData.results[0].name.last;
   const apiCountry = userData.results[0].location.country;
   const apiAge = userData.results[0].dob.age;
+  const apiUser = userData.results[0].login.username;
 
   apiform = document.querySelector("form")
   apiform.innerHTML = `<input type="hidden" name="first" value="${apiFirst}"/>
                         <input type="hidden" name="last" value="${apiLast}"/>
                         <input type="hidden" name="country" value="${apiCountry}"/>
-                        <input type="int" name="age" value="${apiAge}"/>
+                        <input type="hidden" name="age" value="${apiAge}"/>
+                        <input type="hidden" name="username" values="${apiUser}"/>
             <input type="submit" id="addBtn" class="btn" value="Add This One"></button>`;
 
   
