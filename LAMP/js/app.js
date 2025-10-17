@@ -5,7 +5,7 @@ getUser(); // hoisting will ensure that functions are defined before this call
 
 function getUser() {
         // fetch() returns a promise: pending until it resolves to a response object                    
-    fetch(url)
+    fetch(url)    
         // now the promise has settled and we we have a response object (resoved promise)
         // now send that settled response as an argument to the callback in .then(---)
         // the callback is decodeData(); the argument for decodeData() is the settled response
