@@ -50,7 +50,7 @@
                 );");
 
             // Prepare SQL and bind parameters
-            $stmt = $conn->prepare("INSERT INTO randuser (first,last,country) VALUES (:firstname,:lastname,:country)");
+            $stmt = $conn->prepare("INSERT INTO randuser (first,last,country,age) VALUES (:firstname,:lastname,:country,:age)");
             $stmt->bindParam(':firstname', $firstname);
             // TODO: add lastname and country as well as firstname to the MySQL $stmt 
             $stmt->bindParam(':lastname', $lastname);
