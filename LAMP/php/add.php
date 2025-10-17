@@ -71,7 +71,7 @@
 
             echo "<div>";
                 echo "<table>";
-                echo "<thead><tr><th>First Name</th><th>Last Name</th><th>Country</th></tr></thead><tbody>";
+                echo "<thead><tr><th>First Name</th><th>Last Name</th><th>Country</th><th>Age</th></tr></thead><tbody>";
 
                 // output data of each row
                 while($row = $result->fetch(PDO::FETCH_ASSOC)) {
