@@ -39,13 +39,13 @@
             // Set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $conn->prepare("DROP TABLE IF EXISTS randuser;")
+            $stmt = $conn->prepare("DROP TABLE IF EXISTS randuser;");
             $stmt = $conn->prepare("
                 CREATE TABLE randuser (
                 first VARCHAR(100) NOT NULL,
                 last VARCHAR(100) NOT NULL,
                 country VARCHAR(80) NOT NULL,
-                );")
+                );");
 
             // Prepare SQL and bind parameters
             $stmt = $conn->prepare("INSERT INTO randuser (first,last,country) VALUES (:firstname,:lastname,:country)");
