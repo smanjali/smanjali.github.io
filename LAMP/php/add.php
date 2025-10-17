@@ -44,7 +44,7 @@
                 CREATE TABLE randuser (
                 first VARCHAR(100) NOT NULL,
                 last VARCHAR(100) NOT NULL,
-                country VARCHAR(80) NOT NULL,
+                country VARCHAR(80) NOT NULL
                 );");
 
             // Prepare SQL and bind parameters
@@ -73,7 +73,11 @@
                 // output data of each row
                 while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     // TODO: change the hardcoded string to actual API data, ie: firstname, etc.. 
-                    echo "<tr><td>" . htmlspecialchars("API data goes here...") . "</td></tr>";
+                    echo "<tr>
+                            <td>" . htmlspecialchars($row('first')) . "</td>
+                            <td>" . htmlspecialchars($row('last')) . "</td>
+                            <td>" . htmlspecialchars($row('country')) . "</td>                    
+                        </tr>";
                 }
                 echo "</tbody></table>";
             echo "</div>";
