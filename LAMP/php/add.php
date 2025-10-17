@@ -55,7 +55,7 @@
             // TODO: add lastname and country as well as firstname to the MySQL $stmt 
             $stmt->bindParam(':lastname', $lastname);
             $stmt->bindParam(':country', $country);
-            $stmt->bindParam(':age', $age);
+            $stmt->bindParam(':age', $age, PDO::PARAM_INT);
 
             echo "<div>";
             if ($stmt->execute()) {
