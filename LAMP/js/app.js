@@ -39,23 +39,16 @@ function success(userData) {
   <h2 class="user">Meet ${userData.results[0].name.first} ${userData.results[0].name.last}</h2>`;
 
   const apiFirst = userData.results[0].name.first;
-  apiform = document.querySelector("form")
-
   const apiLast = userData.results[0].name.last;
-
   const apiCountry = userData.results[0].location.country;
-  
   const apiAge = userData.results[0].dob.age;
 
-  apiform.innerHTML = `
-        <input type="hidden" name="first" value="${apiFirst}"/>
-        <input type="hidden" name="last" value="${apiLast}"/>
-        <input type="hidden" name="country" value="${apiCountry}"/>
-        <input type="hidden" name="age" value="${apiAge}"/>
-        <input type="submit" id="addBtn" class="btn" value="Add This One">
-    `;
-    console.log("Age being added:", apiAge);
-
+  apiform = document.querySelector("form")
+  apiform.innerHTML = `<input type="hidden" name="first" value="${apiFirst}"/>
+                        <input type="hidden" name="last" value="${apiLast}"/>
+                        <input type="hidden" name="country" value="${apiCountry}"/>
+                        <input type="int" name="age" value="${apiAge}"/>
+            <input type="submit" id="addBtn" class="btn" value="Add This One"></button>`;
 
   
 }
