@@ -55,7 +55,7 @@
             // TODO: add lastname and country as well as firstname to the MySQL $stmt 
             $stmt->bindParam(':lastname', $lastname);
             $stmt->bindParam(':country', $country);
-            $stmt->binfParam(':age', $age);
+            $stmt->bindParam(':age', $age);
 
             echo "<div>";
             if ($stmt->execute()) {
