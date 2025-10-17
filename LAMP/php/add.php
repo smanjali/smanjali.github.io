@@ -22,6 +22,7 @@
         // TODO: set lastname and country in the same manner as above
         $lastname = htmlspecialchars($_POST['last']);
         $country = htmlspecialchars($_POST['country']);
+        $age = htmlspecialchars($_POST['age']);
         
         echo "<p>Adding <strong>$firstname</strong>.</p>";
 
@@ -44,7 +45,8 @@
                 CREATE TABLE randuser (
                 first VARCHAR(100) NOT NULL,
                 last VARCHAR(100) NOT NULL,
-                country VARCHAR(80) NOT NULL
+                country VARCHAR(80) NOT NULL,
+                age INT NOT NULL
                 );");
 
             // Prepare SQL and bind parameters
@@ -53,6 +55,7 @@
             // TODO: add lastname and country as well as firstname to the MySQL $stmt 
             $stmt->bindParam(':lastname', $lastname);
             $stmt->bindParam(':country', $country);
+            $stmt->binfParam(':age', $age);
 
             echo "<div>";
             if ($stmt->execute()) {
@@ -76,7 +79,8 @@
                     echo "<tr>
                             <td>" . htmlspecialchars($row['first']) . "</td>
                             <td>" . htmlspecialchars($row['last']) . "</td>
-                            <td>" . htmlspecialchars($row['country']) . "</td>                    
+                            <td>" . htmlspecialchars($row['country']) . "</td>
+                            <td>" . htmlspecialchars($row['age']) . "</td>                   
                         </tr>";
                 }
                 echo "</tbody></table>";
