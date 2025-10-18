@@ -89,13 +89,7 @@
                         </tr>";
                 }
                 echo "</tbody></table>";
-                echo "<style>
-                table {
-                    font-family: arial, sans-serif;
-                    border-collapse: collapse;
-                    width: 100%;
-                    }
-                </style>";
+                
             echo "</div>";
 
         } catch (PDOException $e) {
@@ -125,6 +119,11 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    }
+    td,th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 12px;
     }
 </style>
 </html>
