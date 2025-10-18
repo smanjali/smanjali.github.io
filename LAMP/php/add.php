@@ -95,7 +95,7 @@
                     border-collapse: collapse;
                     width: 100%;
                     }
-                </style>"
+                </style>";
             echo "</div>";
 
         } catch (PDOException $e) {
