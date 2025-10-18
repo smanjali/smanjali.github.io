@@ -103,4 +103,21 @@
     }
     ?>
 </body>
+<style>
+    html {
+        background-color: gainsboro;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 70%;
+        padding: 2em;
+        margin: 20px auto;
+        background-color: white;
+    }
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+</style>
 </html>
