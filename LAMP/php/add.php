@@ -89,6 +89,13 @@
                         </tr>";
                 }
                 echo "</tbody></table>";
+                echo "<style>
+                table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+                </style>"
             echo "</div>";
 
         } catch (PDOException $e) {
