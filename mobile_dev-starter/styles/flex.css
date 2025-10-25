@@ -1,12 +1,71 @@
 /* Base (mobile first) */
-.hero { padding: 1rem; background: #f7f7f7; border: 1px solid #eee; border-radius: .5rem; }
-
-.cards {
-  /* FLEX LAYOUT HERE */
-  display: flex;
+.hero { 
+  padding: 1rem; 
+  background: #f7f7f7; 
+  border: 1px solid #eee; 
+  border-radius: .5rem; 
 }
 
-/* Tablet (≥601px) */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: stretch;
+  flex-direction: row;
+}
+
+/* Base card styles (mobile first) 
+.card {
+  flex-basis: 100%;
+  flex-shrink: 0;/* Important! 
+}*/
+
+/* FIX: Constrain images to their container */
+.card img {
+  width: 100%;
+  display: block;
+  height: 500px;
+}
+
+/* Mobile (up to 600px) */
+@media screen and (max-width: 600px) {
+  .hero {
+    font-size: 1.6em;
+  }
+  .cards {
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.3em;
+  }
+}
+
+/* Tablet (601px - 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .hero {
+    font-size: 1.3em;
+  }
+
+  .cards {
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  .card {
+    flex-basis: 45%; /* 2 cards per row */
+  }
+}
 
 /* Desktop (≥1025px) */
+@media screen and (min-width: 1025px) {
+  .hero {
+    font-size: 1em;
+  }
 
+  .cards {
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  .card {
+    flex-basis: 30%; 
+    align-items: stretch;
+  }
+}
