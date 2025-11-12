@@ -1,0 +1,17 @@
+html {
+    background-color:azure;
+    text-align: center;
+}
+
+body {
+    background-color: lemonchiffon;
+
+    padding: 3rem;
+    margin: center;
+    margin-top: 20px;
+}
+
+table {
+    bottom: 10px solid orange;
+    background-color: aliceblue;
+}
