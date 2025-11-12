@@ -28,9 +28,9 @@ function decodeData(response) {     // take the response object as a parameter
     if (response.ok) {              // 200 - 299 is true (200 is success)
         apiData.innerHTML = "response is " + response.status;
         return (response.json())    // returns promise that resolves to result of parsing as JSON
-      }
-      else
-        throw response.status      // throw an error: the response code
+    }
+    else
+    throw response.status      // throw an error: the response code
 }
 
 function success(userData) {

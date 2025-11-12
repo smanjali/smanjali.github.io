@@ -9,9 +9,10 @@ const myJSXElement = (
         <button>JSX counter1</button>
         <button>JSX counter2</button>
     </div>
+    
 );
 
 ReactDOM.render(
-  myElement,
+  myJSXElement,
   reactContentRoot
 );
