@@ -1,30 +1,22 @@
-const reactContentRoot = document.getElementById('root')
+import React from 'react'
 
-const counter1 = 0
-const counter2 = 0
+const CountButton = () => {
+    const CurrentCount = 0
+    const CurrentCount2 = 0
 
-function counter1() {
-    counter1++
-    return counter1
-}
+    const handleClicK = () => {
+        CurrentCount + 1
+    }
+    const handleClicK2 = () => {
+        CurrentCount2 + 7
+    }
 
-function counter2() {
-    counter2+=7
-    return counter2
-}
-
-
-const Count = () => {
     return (
         <div>
-            <button>JSX {counter1}</button>
-            <button>JSX {counter2}</button>
+            <button onClick={handleClicK}>+1</button>
+            <p>Count: {CurrentCount}</p>
+            <button onClick={handleClicK2}>+7</button>
+            <p>Count: {CurrentCount2}</p>
         </div>
     )
-    
 }
-
-ReactDOM.render(
-  <Count />,
-  reactContentRoot
-)
