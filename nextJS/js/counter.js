@@ -3,9 +3,18 @@ const reactContentRoot = document.getElementById('root')
 const counter1 = 0
 const counter2 = 0
 
-const Count = () => {
+function counter1() {
     counter1++
-    counter2+= 7
+    return counter1
+}
+
+function counter2() {
+    counter2+=7
+    return counter2
+}
+
+
+const Count = () => {
     return (
         <div>
             <button>JSX {counter1}</button>
@@ -16,6 +25,6 @@ const Count = () => {
 }
 
 ReactDOM.render(
-  Appp(),
+  <Count />,
   reactContentRoot
 )
