@@ -16,6 +16,6 @@ const Count = () => {
 }
 
 ReactDOM.render(
-  myJSXElement,
+  Appp(),
   reactContentRoot
 )
